@@ -8,6 +8,9 @@ FROM python:3.9
 WORKDIR /app
 # Дальнейшие инструкции будут выполняться в директории /app
 
+# Обновление pip
+RUN pip install --upgrade pip
+
 # Установка gunicorn
 RUN pip install gunicorn==20.1.0
 
