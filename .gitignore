@@ -130,5 +130,6 @@ dmypy.json
 
 # Jetbrains
 .idea/
+.run/
 
 frontend/node_modules
