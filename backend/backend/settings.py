@@ -8,7 +8,7 @@ SECRET_KEY = 'django-insecure-j_89af+30&&4qm*8z9_(^zz8p4-ho8z_m6ylm0s$h!-p@on1_^
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '158.160.71.46', '185.70.187.234']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '158.160.71.46', 'evdem82.zapto.org']
 
 
 # Application definition
@@ -108,8 +108,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+# При планировании архитектуры было решено,
+# что статические файлы Django должны быть доступны по адресу /static/
 STATIC_URL = '/static/'
-
+# Указываем корневую директорию для сборки статических файлов;
+# в контейнере это будет /app/collected_static
+STATIC_ROOT = BASE_DIR / 'collected_static'
+# Теперь при вызове команды python manage.py collectstatic
+# Django будет копировать все статические файлы в директорию collected_static
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
